@@ -35,6 +35,8 @@
                     this.update()
                     this.render()
                 })
+
+                window.addEventListener( 'resize', this.resizeWindowHandler, false )
             },
             createCamera() {
                 this.camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 )
@@ -82,6 +84,12 @@
             },
             render() {
                 this.renderer.render( this.scene, this.camera )
+            },
+            resizeWindowHandler() {
+                this.camera.aspect = window.innerWidth / window.innerHeight
+                this.camera.updateProjectionMatrix()
+
+                this.renderer.setSize( window.innerWidth, window.innerHeight )
             }
         },
         mounted() {
