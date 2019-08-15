@@ -21,9 +21,8 @@
             init() {
                 this.container = this.$refs.scene
                 
-                this.scene = new THREE.Scene({
-                    background: new THREE.Color( 0x000000 )
-                })
+                this.scene = new THREE.Scene()
+                this.scene.background = new THREE.Color( 0x000000 )
                 
                 this.createCamera()
                 this.createControls()
