@@ -43,8 +43,8 @@
             },
             createControls() {
                 this.controls = new OrbitControls( this.camera, this.container )
-                this.controls.noZoom = true
-                this.controls.noPan = true
+                this.controls.enableZoom = false
+                this.controls.enablePan = false
                 this.controls.autoRotate = true
                 this.controls.autoRotateSpeed = 1
                 this.controls.enableDamping = true
